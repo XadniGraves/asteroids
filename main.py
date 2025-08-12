@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 
 
@@ -17,6 +18,8 @@ def main():
     # Set up the display
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
     # Main game loop
     running = True
     while running:
@@ -25,9 +28,11 @@ def main():
                 return
         screen.fill((0, 0, 0))  # Clear the screen with black
 
-    pygame.display.flip()  # Update the display
-    fps_clock.tick(60)  # Cap the frame rate at 60 FPS
-    dt += fps_clock.get_time() / 1000.0 # delta time / convert milliseconds to seconds
+        player.draw(screen) # Draw the player
+
+        pygame.display.flip()  # Update the display
+        fps_clock.tick(60)  # Cap the frame rate at 60 FPS
+        dt += fps_clock.get_time() / 1000.0 # delta time / convert milliseconds to seconds
     
 if __name__ == "__main__":
     main()
