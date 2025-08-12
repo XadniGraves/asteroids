@@ -40,6 +40,11 @@ def main():
                 return
         screen.fill((0, 0, 0))  # Clear the screen with black
         updatable.update(dt)
+        asteroid_field.update(dt)
+        for asteroid in asteroids:  # Check collisions with asteroids
+            if player.collide(asteroid):
+                print("Game Over!")
+                return
         for obj in drawable:  # Draw the player
             obj.draw(screen)
 
