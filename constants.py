@@ -12,4 +12,4 @@ PLAYER_TURN_SPEED = 300  # degrees per second
 
 SHOT_RADIUS = 5 # pixels
 SHOT_SPEED = 500  # pixels per second
-SHOT_COOL_DOWN = 250 # milliseconds
+SHOT_COOL_DOWN = 0.3 # seconds
