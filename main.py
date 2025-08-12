@@ -27,12 +27,12 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill((0, 0, 0))  # Clear the screen with black
-
-        player.draw(screen) # Draw the player
+        player.update(dt)
+        player.draw(screen)  # Draw the player
 
         pygame.display.flip()  # Update the display
         fps_clock.tick(60)  # Cap the frame rate at 60 FPS
-        dt += fps_clock.get_time() / 1000.0 # delta time / convert milliseconds to seconds
-    
+        dt = fps_clock.get_time() / 1000.0  # delta time / convert milliseconds to seconds
+        print(f"Delta time: {dt:.3f} seconds")
 if __name__ == "__main__":
     main()
