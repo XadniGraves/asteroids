@@ -51,7 +51,7 @@ def main():
                 if  not shot.collide(asteroid):
                     continue
                 shot.kill()
-                asteroid.kill()
+                asteroid.split()
                 print("Asteroid hit!")
         for obj in drawable:  # Draw the player
             obj.draw(screen)
